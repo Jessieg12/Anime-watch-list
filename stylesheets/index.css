@@ -1,0 +1,17 @@
+body {
+ background-image: url('https://imgix.bustle.com/uploads/image/2021/10/19/05a700fd-5040-47dd-915d-cb3018a657e6-hunter_exam_arc.jpeg?w=2000&h=1090&fit=crop&crop=focalpoint&auto=format%2Ccompress&fp-x=0.504&fp-y=0.3852&blend=000000&blendAlpha=45&blendMode=normal');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#title-div {
+  text-align: center;
+  text-transform: uppercase;
+  margin: auto;
+  width: 50%;
+  border: 10px solid #02f92f;
+  padding: 20px;
+  font-size: 200%;
+}
