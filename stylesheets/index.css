@@ -12,6 +12,11 @@ body {
   margin: auto;
   width: 50%;
   border: 10px solid #02f92f;
-  padding: 20px;
-  font-size: 200%;
+  padding: 30px;
+  font-size: 300%;
+  font-family: fantasy;
+  color: #02f92f;
 }
+
+
+/* background for project sourced from https://www.inverse.com/entertainment/hunter-x-hunter*/
