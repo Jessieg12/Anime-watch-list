@@ -18,5 +18,59 @@ h1 {
   color: #02f92f;
 }
 
+/* Dropdown Button */
+.dropbtn {
+  background-color: #55db34;
+  box-shadow: 0px 8px 16px 0px rgba(36, 211, 9, 0.732);
+  color: rgb(255, 255, 255);
+  padding: 16px;
+  font-size: 16px;
+  font-family: fantasy;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #3029b9;
+  box-shadow: 0px 8px 16px 0px #3029b9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: center;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1ad;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(36, 211, 9, 0.732);
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-family: fantasy;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: rgb(23, 214, 48)}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+/* .container {
+  text-align: center;
+  text-transform: uppercase;
+  margin: auto;
+  width: 50%;
+} */
+
 
 /* background for project sourced from https://www.inverse.com/entertainment/hunter-x-hunter*/
