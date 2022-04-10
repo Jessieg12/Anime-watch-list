@@ -1,27 +1,28 @@
 document.addEventListener('DOMContentLoaded', ()=>{
 getApiInfo()
+dropDownButton()
 })
 
 const getApiInfo = () => {
   fetch('https://anime-facts-rest-api.herokuapp.com/api/v1')
   .then(resp => resp.json())
-  .then((data) => data.data.forEach(titles => dropDownButton(titles)))
+  .then((data) => data.data.forEach(titles => renderAllAnime(titles)))
   //anime.forEach(titles => renderAllAnime(titles)))
 }
 
-// const renderAllAnime = (titles) => {
-//   const animeName = document.createElement('h2')
-//   animeName.innerText = titles.anime_name
+const renderAllAnime = (titles) => {
 
-// const animeselection = document.querySelector('h3')
-// animeselection.append(animeName)
-// }
+  const animeName = document.createElement('h2')
+  animeName.innerText = titles.anime_name
 
-function dropDownButton() {
+  const animeselection = document.querySelector('h3')
+  animeselection.append(animeName)
+}
+
+const dropDownButton = () => {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
-// Close the dropdown menu if the user clicks outside of it
 window.onclick = function(e) {
   if (!e.target.matches('.dropbtn')) {
     let dropdowns = document.getElementsByClassName("dropdown-content");
