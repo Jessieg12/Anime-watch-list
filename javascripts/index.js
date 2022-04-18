@@ -11,24 +11,34 @@ const getApiInfo = () => {
 }
 
 const renderAllAnime = (titles) => {
+  const animeSelection = document.getElementById('myDropdown')
 
-  const animeName = document.createElement('h2')
-  animeName.innerText = titles.anime_name
+  const animeCard = document.createElement('a')
+  animeCard.classList = "anime_names"
+  animeCard.setAttribute('href', '#')
+  animeCard.innerHTML = titles.anime_name
 
-  const animeselection = document.querySelector('h3')
-  animeselection.append(animeName)
+
+  animeSelection.append(animeCard)
+
+  animeCard.addEventListener('click', (e) => {
+   createAnimeInfo()
+  })
+}
+
+const createAnimeInfo = () => {
+  
 }
 
 const dropDownButton = () => {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
-window.onclick = function(e) {
+this.onclick = function(e) {
   if (!e.target.matches('.dropbtn')) {
-    let dropdowns = document.getElementsByClassName("dropdown-content");
-    let i;
+    const dropdowns = document.getElementsByClassName("dropdown-content");
     for (i = 0; i < dropdowns.length; i++) {
-      let openDropdown = dropdowns[i];
+      const openDropdown = dropdowns[i];
       if (openDropdown.classList.contains('show')) {
         openDropdown.classList.remove('show');
       }

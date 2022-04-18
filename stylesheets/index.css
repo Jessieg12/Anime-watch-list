@@ -58,6 +58,21 @@ h1 {
   display: block;
 }
 
+.anime_info_container {
+    padding: 1rem;
+    margin: auto;
+    width: auto;
+    height: auto;
+    position: absolute; left: 1500px; top: 300px;
+    background: #f1f1f1ad;
+    opacity: .8;
+}
+
+.anime_names {
+  font-family: fantasy;
+  text-transform: uppercase;
+}
+
 .dropdown-content a:hover {background-color: rgb(23, 214, 48)}
 
 .show {display:block;}
