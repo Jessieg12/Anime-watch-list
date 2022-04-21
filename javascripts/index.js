@@ -23,12 +23,34 @@ const renderAllAnime = (titles) => {
 
   animeCard.addEventListener('click', (e) => {
    createAnimeInfo()
+   addImage()
   })
+
+  const createAnimeInfo = () => {
+    fetch(`https://anime-facts-rest-api.herokuapp.com/api/v1/${titles.anime_name}`)
+    .then(resp => resp.json())
+    .then(data => console.log(data))
+  }
+
+  const addImage = () => {
+    const addImageContainer = document.querySelector('h3')
+    addImageContainer.innerHTML= ''
+
+    const animeNameCard = document.createElement('p')
+    animeNameCard.innerText = titles.anime_name
+
+    const animeImageCard = document.createElement('img')
+    animeImageCard.src = titles.anime_img
+
+    addImageContainer.append(animeNameCard, animeImageCard)
+  }
 }
 
-const createAnimeInfo = () => {
-  
-}
+// const createAnimeInfo = () => {
+//   fetch(`https://anime-facts-rest-api.herokuapp.com/api/v1/${anime_name}`)
+//   .then(resp => resp.json())
+//   .then(data => console.log(data))
+// }
 
 const dropDownButton = () => {
   document.getElementById("myDropdown").classList.toggle("show");
@@ -45,3 +67,4 @@ this.onclick = function(e) {
     }
   }
 }
+
