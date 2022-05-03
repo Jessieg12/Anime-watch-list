@@ -29,7 +29,7 @@ const renderAllAnime = (titles) => {
   const createAnimeInfo = () => {
     fetch(`https://anime-facts-rest-api.herokuapp.com/api/v1/${titles.anime_name}`)
     .then(resp => resp.json())
-    .then(data => console.log(data))
+    .then(data => renderRandomFacts(data))
   }
 
   const addImage = () => {
@@ -46,11 +46,10 @@ const renderAllAnime = (titles) => {
   }
 }
 
-// const createAnimeInfo = () => {
-//   fetch(`https://anime-facts-rest-api.herokuapp.com/api/v1/${anime_name}`)
-//   .then(resp => resp.json())
-//   .then(data => console.log(data))
-// }
+const renderRandomFacts = (randomFact) => {
+  console.log('fact', randomFact)
+}
+
 
 const dropDownButton = () => {
   document.getElementById("myDropdown").classList.toggle("show");
