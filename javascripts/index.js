@@ -47,7 +47,21 @@ const renderAllAnime = (titles) => {
 }
 
 const renderRandomFacts = (randomFact) => {
-  console.log('fact', randomFact)
+  const addRFB = document.querySelector('h4')
+
+  const createRFB = document.createElement('button')
+  createRFB.innerText = `Random Anime Fact`
+  
+  createRFB.addEventListener('click', (e) => {
+    const randomAF = document.createElement('p')
+    randomAF.innerHTML = randomFact.data.fact
+
+    console.log(randomFact.data.fact)
+    
+    addRFB.append(randomAF)
+  })
+
+  addRFB.append(createRFB)
 }
 
 
