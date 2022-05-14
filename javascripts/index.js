@@ -44,25 +44,44 @@ const renderAllAnime = (titles) => {
 
     addImageContainer.append(animeNameCard, animeImageCard)
   }
-}
 
-const renderRandomFacts = (randomFact) => {
-  const addRFB = document.querySelector('h4')
-
-  const createRFB = document.createElement('button')
-  createRFB.innerText = `Random Anime Fact`
+  const renderRandomFacts = (randomFact) => {
+    const addRFB = document.querySelector('h4')
   
-  createRFB.addEventListener('click', (e) => {
-    const randomAF = document.createElement('p')
-    randomAF.innerHTML = randomFact.data.fact
-
-    console.log(randomFact.data.fact)
+    const createRFB = document.createElement('button')
+    createRFB.innerText = `Random Anime Fact`
     
-    addRFB.append(randomAF)
-  })
+    createRFB.addEventListener('click', (e) => {
+      const randomAF = document.createElement('p')
+      randomAF.innerHTML = randomFact.data
+  
+      console.log(randomFact.data)
+      
+      addRFB.append(randomAF)
+    })
+  
+    addRFB.append(createRFB)
+  }
 
-  addRFB.append(createRFB)
 }
+
+// const renderRandomFacts = (randomFact) => {
+//   const addRFB = document.querySelector('h4')
+
+//   const createRFB = document.createElement('button')
+//   createRFB.innerText = `Random Anime Fact`
+  
+//   createRFB.addEventListener('click', (e) => {
+//     const randomAF = document.createElement('p')
+//     randomAF.innerHTML = randomFact.data
+
+//     console.log(randomFact.data)
+    
+//     addRFB.append(randomAF)
+//   })
+
+//   addRFB.append(createRFB)
+// }
 
 
 const dropDownButton = () => {

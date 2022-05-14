@@ -59,11 +59,11 @@ h1 {
 }
 
 .anime_info_container {
-    padding: 1rem;
+    padding: 2rem;
     margin: auto;
     width: auto;
     height: auto;
-    position: absolute; left: 1500px; top: 300px;
+    position: absolute; left: 1000px; top: 300px;
     background: #f1f1f1ad;
     opacity: .8;
 }
