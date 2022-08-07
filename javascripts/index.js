@@ -16,8 +16,8 @@ const renderAllAnime = (titles) => {
   const animeCard = document.createElement('a')
   animeCard.classList = "anime_names"
   animeCard.setAttribute('href', '#')
-  animeCard.innerHTML = titles.anime_name
-
+  animeCard.innerHTML = titles.anime_name.replaceAll('_', ' ')
+  
 
   animeSelection.append(animeCard)
 
@@ -29,7 +29,7 @@ const renderAllAnime = (titles) => {
   const createAnimeInfo = () => {
     fetch(`https://anime-facts-rest-api.herokuapp.com/api/v1/${titles.anime_name}`)
     .then(resp => resp.json())
-    .then(data => renderRandomFacts(data))
+    .then(data => renderAnimeFacts(data))
   }
 
   const addImage = () => {
@@ -37,7 +37,8 @@ const renderAllAnime = (titles) => {
     addImageContainer.innerHTML= ''
 
     const animeNameCard = document.createElement('p')
-    animeNameCard.innerText = titles.anime_name
+    animeNameCard.className = 'anime_NameCard'
+    animeNameCard.innerText = titles.anime_name.replaceAll('_', ' ')
 
     const animeImageCard = document.createElement('img')
     animeImageCard.src = titles.anime_img
@@ -45,22 +46,29 @@ const renderAllAnime = (titles) => {
     addImageContainer.append(animeNameCard, animeImageCard)
   }
 
-  const renderRandomFacts = (randomFact) => {
-    const addRFB = document.querySelector('h4')
-  
-    const createRFB = document.createElement('button')
-    createRFB.innerText = `Random Anime Fact`
+  const renderAnimeFacts = (animeFacts) => {
+    const addAFB = document.querySelector('h4')
     
-    createRFB.addEventListener('click', (e) => {
-      const randomAF = document.createElement('p')
-      randomAF.innerHTML = randomFact.data
   
-      console.log(randomFact.data)
+    const createAFB = document.createElement('button')
+    createAFB.Id = 'facts_button'
+    createAFB.innerText = `Click for Anime Facts`
+    
+    createAFB.addEventListener('click', (e) => {
+      const animeFact = document.createElement('p')
+      animeFact.innerText = ""
+      animeFact.Id = "fact_info"
       
-      addRFB.append(randomAF)
+      const infoJson = JSON.stringify(animeFacts.data)
+      document.getElementsByClassName('fact_info').innerHTML = infoJson
+      
+  
+      console.log(animeFacts.data)
+      
+      addAFB.append(animeFact, infoJson)
     })
   
-    addRFB.append(createRFB)
+    addAFB.append(createAFB)
   }
 
 }

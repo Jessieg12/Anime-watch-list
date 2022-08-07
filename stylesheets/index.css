@@ -60,17 +60,26 @@ h1 {
 
 .anime_info_container {
     padding: 2rem;
+    word-wrap: break-word;
     margin: auto;
     width: auto;
     height: auto;
     position: absolute; left: 1000px; top: 300px;
     background: #f1f1f1ad;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 15px;
+    font-family: fantasy;
     opacity: .8;
 }
 
 .anime_names {
   font-family: fantasy;
   text-transform: uppercase;
+}
+
+.facts_button {
+  position: absolute;
 }
 
 .dropdown-content a:hover {background-color: rgb(23, 214, 48)}
