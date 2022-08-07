@@ -58,7 +58,8 @@ h1 {
   display: block;
 }
 
-.anime_info_container {
+
+#anime_info_container {
     padding: 2rem;
     word-wrap: break-word;
     margin: auto;

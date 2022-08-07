@@ -46,30 +46,30 @@ const renderAllAnime = (titles) => {
     addImageContainer.append(animeNameCard, animeImageCard)
   }
 
-  const renderAnimeFacts = (animeFacts) => {
-    const addAFB = document.querySelector('h4')
+  // const renderAnimeFacts = (animeFacts) => {
+  //   const addAFB = document.querySelector('h4')
     
   
-    const createAFB = document.createElement('button')
-    createAFB.Id = 'facts_button'
-    createAFB.innerText = `Click for Anime Facts`
+  //   const createAFB = document.createElement('button')
+  //   createAFB.Id = 'facts_button'
+  //   createAFB.innerText = `Click for Anime Facts`
     
-    createAFB.addEventListener('click', (e) => {
-      const animeFact = document.createElement('p')
-      animeFact.innerText = ""
-      animeFact.Id = "fact_info"
+  //   createAFB.addEventListener('click', (e) => {
+  //     const animeFact = document.createElement('p')
+  //     animeFact.innerText = ""
+  //     animeFact.Id = "fact_info"
       
-      const infoJson = JSON.stringify(animeFacts.data)
-      document.getElementsByClassName('fact_info').innerHTML = infoJson
+  //     const infoJson = JSON.stringify(animeFacts.data)
+  //     document.getElementsByClassName('fact_info').innerHTML = infoJson
       
   
-      console.log(animeFacts.data)
+  //     console.log(animeFacts.data)
       
-      addAFB.append(animeFact, infoJson)
-    })
+  //     addAFB.append(animeFact, infoJson)
+  //   })
   
-    addAFB.append(createAFB)
-  }
+  //   addAFB.append(createAFB)
+  // }
 
 }
 
