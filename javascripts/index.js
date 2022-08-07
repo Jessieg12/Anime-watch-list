@@ -24,6 +24,7 @@ const renderAllAnime = (titles) => {
   animeCard.addEventListener('click', (e) => {
    createAnimeInfo()
    addImage()
+  //  createAnimeForm()
   })
 
   const createAnimeInfo = () => {
@@ -46,7 +47,37 @@ const renderAllAnime = (titles) => {
     addImageContainer.append(animeNameCard, animeImageCard)
   }
 
-  // const renderAnimeFacts = (animeFacts) => {
+  // const createAnimeForm = () => {
+  //   const addAnimeForm = document.querySelector(h4)
+  //   addAnimeForm.innerHTML= ''
+
+  //   const animeForm = document.createElement('div')
+  //   animeForm.className= 'container'
+    
+  //   addAnimeForm.append(animeForm)
+  // }
+
+}
+
+const dropDownButton = () => {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+this.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+    const dropdowns = document.getElementsByClassName("dropdown-content");
+    for (i = 0; i < dropdowns.length; i++) {
+      const openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+
+
+ // const renderAnimeFacts = (animeFacts) => {
   //   const addAFB = document.querySelector('h4')
     
   
@@ -71,7 +102,7 @@ const renderAllAnime = (titles) => {
   //   addAFB.append(createAFB)
   // }
 
-}
+
 
 // const renderRandomFacts = (randomFact) => {
 //   const addRFB = document.querySelector('h4')
@@ -90,21 +121,3 @@ const renderAllAnime = (titles) => {
 
 //   addRFB.append(createRFB)
 // }
-
-
-const dropDownButton = () => {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-this.onclick = function(e) {
-  if (!e.target.matches('.dropbtn')) {
-    const dropdowns = document.getElementsByClassName("dropdown-content");
-    for (i = 0; i < dropdowns.length; i++) {
-      const openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-
