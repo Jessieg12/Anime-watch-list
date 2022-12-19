@@ -34,6 +34,9 @@ const renderAllAnime = (titles) => {
   }
 
   const addImage = () => {
+    const containerAppear = document.querySelector('hidden')
+    containerAppear.removeclass('hidden').addclass('visible')
+
     const addImageContainer = document.querySelector('h3')
     addImageContainer.innerHTML= ''
 

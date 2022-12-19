@@ -83,6 +83,15 @@ h1 {
   position: absolute;
 }
 
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: visible;
+}
+
+
 .dropdown-content a:hover {background-color: rgb(23, 214, 48)}
 
 .show {display:block;}
