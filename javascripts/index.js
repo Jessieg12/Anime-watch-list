@@ -47,9 +47,9 @@ const renderAllAnime = (titles) => {
     // .replaceAll('_', ' ')
 
     const animeImageCard = document.createElement('img')
+    animeImageCard.className = 'anime_image'
     animeImageCard.src = titles.anime_img
-
-
+  
 
     addImageContainer.append(animeNameCard, animeImageCard)
   }
@@ -61,6 +61,7 @@ const renderAllAnime = (titles) => {
     const animeForm = document.createElement('div')
     animeForm.className= 'container'
     animeForm.innerText = `Tell me about your experience this time around reading/watching ${titles.anime_name}!`
+
 
     addAnimeForm.append(animeForm)
   }

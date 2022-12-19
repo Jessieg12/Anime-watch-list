@@ -87,6 +87,11 @@ h1 {
   display: none;
 }
 
+.anime_image {
+  width: 800px;
+  height: 1000px;
+}
+
 /* .visible {
   display: visible;
 } */
