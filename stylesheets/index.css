@@ -87,14 +87,18 @@ h1 {
   display: none;
 }
 
-.visible {
+/* .visible {
   display: visible;
+} */
+
+
+.dropdown-content a:hover {
+  background-color: rgb(23, 214, 48)
 }
 
-
-.dropdown-content a:hover {background-color: rgb(23, 214, 48)}
-
-.show {display:block;}
+.show {
+  display:block;
+}
 
 /* .container {
   text-align: center;

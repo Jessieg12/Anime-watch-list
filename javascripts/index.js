@@ -4,9 +4,9 @@ dropDownButton()
 })
 
 const getApiInfo = () => {
-  fetch('https://anime-facts-rest-api.herokuapp.com/api/v1')
+  fetch('http://localhost:3000/anime')
   .then(resp => resp.json())
-  .then((data) => data.data.forEach(titles => renderAllAnime(titles)))
+  .then((anime) => anime.forEach(titles => renderAllAnime(titles)))
   //anime.forEach(titles => renderAllAnime(titles)))
 }
 
@@ -16,26 +16,27 @@ const renderAllAnime = (titles) => {
   const animeCard = document.createElement('a')
   animeCard.classList = "anime_names"
   animeCard.setAttribute('href', '#')
-  animeCard.innerHTML = titles.anime_name.replaceAll('_', ' ')
+  animeCard.innerHTML = titles.anime_name
+  // .replaceAll('_', ' ')
   
 
   animeSelection.append(animeCard)
 
   animeCard.addEventListener('click', (e) => {
-   createAnimeInfo()
+  //  createAnimeInfo()
    addImage()
   //  createAnimeForm()
   })
 
-  const createAnimeInfo = () => {
-    fetch(`https://anime-facts-rest-api.herokuapp.com/api/v1/${titles.anime_name}`)
-    .then(resp => resp.json())
-    .then(data => renderAnimeFacts(data))
-  }
+  // const createAnimeInfo = () => {
+  //   fetch(`https://anime-facts-rest-api.herokuapp.com/api/v1/${titles.anime_name}`)
+  //   .then(resp => resp.json())
+  //   .then(data => renderAnimeFacts(data))
+  // }
 
   const addImage = () => {
-    const containerAppear = document.querySelector('hidden')
-    containerAppear.removeclass('hidden').addclass('visible')
+    const containerAppear = document.querySelector('#anime_info_container')
+    containerAppear.classList.remove('hidden')
 
     const addImageContainer = document.querySelector('h3')
     addImageContainer.innerHTML= ''
