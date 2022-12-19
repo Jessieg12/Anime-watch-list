@@ -25,7 +25,7 @@ const renderAllAnime = (titles) => {
   animeCard.addEventListener('click', (e) => {
   //  createAnimeInfo()
    addImage()
-  //  createAnimeForm()
+   createAnimeForm()
   })
 
   // const createAnimeInfo = () => {
@@ -43,23 +43,27 @@ const renderAllAnime = (titles) => {
 
     const animeNameCard = document.createElement('p')
     animeNameCard.className = 'anime_NameCard'
-    animeNameCard.innerText = titles.anime_name.replaceAll('_', ' ')
+    animeNameCard.innerText = titles.anime_name
+    // .replaceAll('_', ' ')
 
     const animeImageCard = document.createElement('img')
     animeImageCard.src = titles.anime_img
 
+
+
     addImageContainer.append(animeNameCard, animeImageCard)
   }
 
-  // const createAnimeForm = () => {
-  //   const addAnimeForm = document.querySelector(h4)
-  //   addAnimeForm.innerHTML= ''
+  const createAnimeForm = () => {
+    const addAnimeForm = document.querySelector('h4')
+    addAnimeForm.innerHTML= ''
 
-  //   const animeForm = document.createElement('div')
-  //   animeForm.className= 'container'
-    
-  //   addAnimeForm.append(animeForm)
-  // }
+    const animeForm = document.createElement('div')
+    animeForm.className= 'container'
+    animeForm.innerText = `Tell me about your experience this time around reading/watching ${titles.anime_name}!`
+
+    addAnimeForm.append(animeForm)
+  }
 
 }
 
