@@ -108,6 +108,10 @@ h1 {
   display:block;
 }
 
+.comment_section {
+  font-size: 15px;
+}
+
 /* .container {
   text-align: center;
   text-transform: uppercase;

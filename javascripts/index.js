@@ -38,7 +38,7 @@ const renderAllAnime = (titles) => {
     const containerAppear = document.querySelector('#anime_info_container')
     containerAppear.classList.remove('hidden')
 
-    const addImageContainer = document.querySelector('h3')
+    const addImageContainer = document.querySelector('h2')
     addImageContainer.innerHTML= ''
 
     const animeNameCard = document.createElement('p')
@@ -49,21 +49,29 @@ const renderAllAnime = (titles) => {
     const animeImageCard = document.createElement('img')
     animeImageCard.className = 'anime_image'
     animeImageCard.src = titles.anime_img
-  
+    
+
+
 
     addImageContainer.append(animeNameCard, animeImageCard)
   }
 
   const createAnimeForm = () => {
-    const addAnimeForm = document.querySelector('h4')
+    const addAnimeForm = document.querySelector('h3')
     addAnimeForm.innerHTML= ''
 
     const animeForm = document.createElement('div')
-    animeForm.className= 'container'
+    animeForm.className= 'form_container'
     animeForm.innerText = `Tell me about your experience this time around reading/watching ${titles.anime_name}!`
 
+    const animeComment = document.createElement('h4')
+    animeComment.className = 'comment_section'
+    animeComment.innerText = 'Write your experience below!'
 
-    addAnimeForm.append(animeForm)
+    
+
+
+    addAnimeForm.append(animeForm, animeComment)
   }
 
 }
