@@ -1,13 +1,15 @@
 document.addEventListener('DOMContentLoaded', ()=>{
 getApiInfo()
 dropDownButton()
+animeAdder()
 })
 
+const animeUrl = 'http://localhost:3000/anime'
+
 const getApiInfo = () => {
-  fetch('http://localhost:3000/anime')
+  fetch(animeUrl)
   .then(resp => resp.json())
   .then((anime) => anime.forEach(titles => renderAllAnime(titles)))
-  //anime.forEach(titles => renderAllAnime(titles)))
 }
 
 const renderAllAnime = (titles) => {
@@ -17,22 +19,14 @@ const renderAllAnime = (titles) => {
   animeCard.classList = "anime_names"
   animeCard.setAttribute('href', '#')
   animeCard.innerHTML = titles.anime_name
-  // .replaceAll('_', ' ')
   
 
   animeSelection.append(animeCard)
 
   animeCard.addEventListener('click', (e) => {
-  //  createAnimeInfo()
    addImage()
    createAnimeForm()
   })
-
-  // const createAnimeInfo = () => {
-  //   fetch(`https://anime-facts-rest-api.herokuapp.com/api/v1/${titles.anime_name}`)
-  //   .then(resp => resp.json())
-  //   .then(data => renderAnimeFacts(data))
-  // }
 
   const addImage = () => {
     const containerAppear = document.querySelector('#anime_info_container')
@@ -44,14 +38,10 @@ const renderAllAnime = (titles) => {
     const animeNameCard = document.createElement('p')
     animeNameCard.className = 'anime_NameCard'
     animeNameCard.innerText = titles.anime_name
-    // .replaceAll('_', ' ')
 
     const animeImageCard = document.createElement('img')
     animeImageCard.className = 'anime_image'
     animeImageCard.src = titles.anime_img
-    
-
-
 
     addImageContainer.append(animeNameCard, animeImageCard)
   }
@@ -68,13 +58,35 @@ const renderAllAnime = (titles) => {
     animeComment.className = 'comment_section'
     animeComment.innerText = 'Write your experience below!'
 
-    
-
-
     addAnimeForm.append(animeForm, animeComment)
   }
 
 }
+
+const animeAdder = () => {
+  const addAnimeInfo = document.querySelector('.add_anime_info')
+  
+  addAnimeInfo.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const newAnimeName = e.target.name.value
+    const newAnimeImage = e.target.image.value
+  
+    fetch(animeUrl, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        anime_name: newAnimeName,
+        anime_img: newAnimeImage,
+        times_watched: 0,
+        times_read: 0, 
+      })
+    })
+    .then(resp => resp.json())
+    .then(title => renderAllAnime(title))
+  })
+  }
 
 const dropDownButton = () => {
   document.getElementById("myDropdown").classList.toggle("show");
@@ -91,50 +103,3 @@ this.onclick = function(e) {
     }
   }
 }
-
-
-
- // const renderAnimeFacts = (animeFacts) => {
-  //   const addAFB = document.querySelector('h4')
-    
-  
-  //   const createAFB = document.createElement('button')
-  //   createAFB.Id = 'facts_button'
-  //   createAFB.innerText = `Click for Anime Facts`
-    
-  //   createAFB.addEventListener('click', (e) => {
-  //     const animeFact = document.createElement('p')
-  //     animeFact.innerText = ""
-  //     animeFact.Id = "fact_info"
-      
-  //     const infoJson = JSON.stringify(animeFacts.data)
-  //     document.getElementsByClassName('fact_info').innerHTML = infoJson
-      
-  
-  //     console.log(animeFacts.data)
-      
-  //     addAFB.append(animeFact, infoJson)
-  //   })
-  
-  //   addAFB.append(createAFB)
-  // }
-
-
-
-// const renderRandomFacts = (randomFact) => {
-//   const addRFB = document.querySelector('h4')
-
-//   const createRFB = document.createElement('button')
-//   createRFB.innerText = `Random Anime Fact`
-  
-//   createRFB.addEventListener('click', (e) => {
-//     const randomAF = document.createElement('p')
-//     randomAF.innerHTML = randomFact.data
-
-//     console.log(randomFact.data)
-    
-//     addRFB.append(randomAF)
-//   })
-
-//   addRFB.append(createRFB)
-// }

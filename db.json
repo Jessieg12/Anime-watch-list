@@ -1,144 +1,151 @@
 {
   "anime": [
     {
-      "anime_id": 1,
+      "id": 1,
       "anime_name": "Bleach",
       "anime_img": "https://m.media-amazon.com/images/M/MV5BZjE0YjVjODQtZGY2NS00MDcyLThhMDAtZGQwMTZiOWNmNjRiXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
       "times_watched": 0,
       "times_read": 0
     },
     {
-      "anime_id": 2,
+      "id": 2,
       "anime_name": "Attack on Titan",
       "anime_img": "https://m.media-amazon.com/images/M/MV5BNzc5MTczNDQtNDFjNi00ZDU5LWFkNzItOTE1NzQzMzdhNzMxXkEyXkFqcGdeQXVyNTgyNTA4MjM@._V1_.jpg",
       "times_watched": 0,
       "times_read": 0
     },
     {
-      "anime_id": 3,
+      "id": 3,
       "anime_name": "Deathnote",
       "anime_img": "https://m.media-amazon.com/images/M/MV5BNjRiNmNjMmMtN2U2Yi00ODgxLTk3OTMtMmI1MTI1NjYyZTEzXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg",
       "times_watched": 0,
       "times_read": 0
     },
     {
-      "anime_id": 4,
+      "id": 4,
       "anime_name": "Elfen Lied",
       "anime_img": "https://m.media-amazon.com/images/M/MV5BMDU1ZmQwZTQtZjg1OS00YzhhLWE0MTEtYjYxNzdkNzk2NWVkXkEyXkFqcGdeQXVyNTk5NTQ1NzM@._V1_FMjpg_UX1000_.jpg",
       "times_watched": 0,
       "times_read": 0
     },
     {
-      "anime_id": 5,
+      "id": 5,
       "anime_name": "Toradora",
       "anime_img": "https://m.media-amazon.com/images/M/MV5BNWEwMjE2MjQtZTQ3NC00OTUxLWEwMWUtMThjZjg4Zjc5ZDYwXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg",
       "times_watched": 0,
       "times_read": 0
     },
     {
-      "anime_id": 6,
+      "id": 6,
       "anime_name": "Hunter x Hunter",
       "anime_img": "https://m.media-amazon.com/images/M/MV5BNGM0YTk3MWEtN2JlZC00ZmZmLWIwMDktZTMxZGE5Zjc2MGExXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg",
       "times_watched": 0,
       "times_read": 0
     },
     {
-      "anime_id": 7,
+      "id": 7,
       "anime_name": "JoJo's Bizarre Adventure",
       "anime_img": "https://m.media-amazon.com/images/M/MV5BZDc3NGQ3ZWQtYjNkOC00MjhiLTg2N2YtNmZlOGNiZTFkOWNhXkEyXkFqcGdeQXVyNjc2NjA5MTU@._V1_FMjpg_UX1000_.jpg",
       "times_watched": 0,
       "times_read": 0
     },
     {
-      "anime_id": 8,
+      "id": 8,
       "anime_name": "Fullmetal Alchemist: Brotherhood",
       "anime_img": "https://m.media-amazon.com/images/M/MV5BNTM4MzMxMWItYzc3NC00ODY0LTg0M2MtYjg4NDg0ZjM0MjdiXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg",
       "times_watched": 0,
       "times_read": 0
     },
     {
-      "anime_id": 9,
+      "id": 9,
       "anime_name": "Steins;Gate",
       "anime_img": "https://m.media-amazon.com/images/M/MV5BMjUxMzE4ZDctODNjMS00MzIwLThjNDktODkwYjc5YWU0MDc0XkEyXkFqcGdeQXVyNjc3OTE4Nzk@._V1_FMjpg_UX1000_.jpg",
       "times_watched": 0,
       "times_read": 0
     },
     {
-      "anime_id": 10,
+      "id": 10,
       "anime_name": "Rurouni Kenshin",
       "anime_img": "https://m.media-amazon.com/images/M/MV5BZWVhZWIzOTgtMzM0Yi00YTNkLWI1MDItMjhkMjNhMTkyOWE4XkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg",
       "times_watched": 0,
       "times_read": 0
     },
     {
-      "anime_id": 11,
+      "id": 11,
       "anime_name": "Sailor Moon",
       "anime_img": "https://m.media-amazon.com/images/M/MV5BYTZhYjIxMTUtMThhMC00NjA4LTg4OTQtZDE1ODAyNGUwZWMzXkEyXkFqcGdeQXVyNTgyNTA4MjM@._V1_.jpg",
       "times_watched": 0,
       "times_read": 0
     },
     {
-      "anime_id": 12,
+      "id": 12,
       "anime_name": "Akira",
       "anime_img": "https://m.media-amazon.com/images/M/MV5BM2ZiZTk1ODgtMTZkNS00NTYxLWIxZTUtNWExZGYwZTRjODViXkEyXkFqcGdeQXVyMTE2MzA3MDM@._V1_FMjpg_UX1000_.jpg",
       "times_watched": 0,
       "times_read": 0
     },
     {
-      "anime_id": 13,
+      "id": 13,
       "anime_name": "Pokemon",
       "anime_img": "https://m.media-amazon.com/images/M/MV5BNDcwZDc2NTEtMzU0Ni00YTQyLWIyYTQtNTI3YjM0MzhmMmI4XkEyXkFqcGdeQXVyNTgyNTA4MjM@._V1_.jpg",
       "times_watched": 0,
       "times_read": 0
     },
     {
-      "anime_id": 14,
+      "id": 14,
       "anime_name": "Dragon Ball Z",
       "anime_img": "https://m.media-amazon.com/images/M/MV5BNGM5MTEyZDItZWNhOS00NzNkLTgwZTAtNWIzY2IzZmExOWMxXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
       "times_watched": 0,
       "times_read": 0
     },
     {
-      "anime_id": 15,
+      "id": 15,
       "anime_name": "Neon Genesis Evangelion",
       "anime_img": "https://m.media-amazon.com/images/M/MV5BODZkZjUxNmEtMGEyOS00ZDY5LTkxZDMtZTJkZDBiZTkyOWRkXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg",
       "times_watched": 0,
       "times_read": 0
     },
     {
-      "anime_id": 16,
+      "id": 16,
       "anime_name": "Mobile Fighter G Gundam",
       "anime_img": "https://m.media-amazon.com/images/M/MV5BOWIyM2UwNjMtMGM0YS00NzkxLWFkNDktM2MzODg0MmE1YTYyXkEyXkFqcGdeQXVyMjc4OTQ1OTA@._V1_.jpg",
       "times_watched": 0,
       "times_read": 0
     },
     {
-      "anime_id": 17,
+      "id": 17,
       "anime_name": "Super Dimension Fortress Macross",
       "anime_img": "https://m.media-amazon.com/images/M/MV5BMWY4NDUyZjQtNWVmYS00Yzk2LWIwNzEtYmIwY2RiN2ZmOWE2XkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg",
       "times_watched": 0,
       "times_read": 0
     },
     {
-      "anime_id": 18,
+      "id": 18,
       "anime_name": "Trigun",
       "anime_img": "https://m.media-amazon.com/images/M/MV5BNjMyYzg4NDMtYmE1OC00YzAxLTlhZGMtNjIyMWZkZjQyOWZhXkEyXkFqcGdeQXVyNjc3OTE4Nzk@._V1_FMjpg_UX1000_.jpg",
       "times_watched": 0,
       "times_read": 0
     },
     {
-      "anime_id": 19,
+      "id": 19,
       "anime_name": "Golden Boy",
       "anime_img": "https://m.media-amazon.com/images/M/MV5BZmE5MjkzNjQtZTExNy00NDU3LWFiNzMtM2FkN2I5ZTQ3NTVlXkEyXkFqcGdeQXVyNDQxNjcxNQ@@._V1_FMjpg_UX1000_.jpg",
       "times_watched": 0,
       "times_read": 0
     },
     {
-      "anime_id": 20,
+      "id": 20,
       "anime_name": "The Melancholy of Haruhi Suzumiya",
       "anime_img": "https://m.media-amazon.com/images/M/MV5BNWMxMGUzOTktYjliYS00MGMyLWJlNWYtYzljMzZhNDRmODIyXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_FMjpg_UX1000_.jpg",
       "times_watched": 0,
       "times_read": 0
+    },
+    {
+      "anime_name": "Spy x Family",
+      "anime_img": "https://m.media-amazon.com/images/M/MV5BMWM4Njg2MjUtODU3OS00MGNmLWIyNTctZGZkNTdjN2JhNmU2XkEyXkFqcGdeQXVyMTMzNDExODE5._V1_FMjpg_UX1000_.jpg",
+      "times_watched": 0,
+      "times_read": 0,
+      "id": 21
     }
   ]
 }
