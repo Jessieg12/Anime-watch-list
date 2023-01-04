@@ -24,11 +24,11 @@
     <h2></h2>
     <h3></h3>
       <div>
-      <input type="text" name='full_name' placeholder="User Name?">
+      <input type="text" name='full_name' placeholder="User Name?" required>
       </div>
       <h5>
       </h5>
-      <textarea name="comment" cols="70" rows="30" placeholder="Comment here!"></textarea>
+      <textarea name="comment" cols="70" rows="30" placeholder="Comment here!" required></textarea>
       <div>
       <input type="submit" value="Enter Comments" id="add_comment">
       </div>
@@ -39,17 +39,23 @@
   <div id="add_anime">
     <form class="add_anime_info">
     <h6 id="add_anime_text">Want to add an Anime/Manga Title?</h6>
+    <p>(ง ͠ಥ_ಥ)ง</p>
     <p id="instructions">Please fill out the following form!</p>
     <li>Add a name for the Anime/Manga</li>
     <li>Add a link of a picture to go along with it</li>
     <ul></ul>
+    <p>৻( •̀ ᗜ •́ ৻)</p>
     <div>
-      <input type="text" placeholder="Anime/Manga Title" name="name" value="" class="textbox">
-      <input type="text" placeholder="Anime/Manga Image" name="image" value="" class="textbox">
+      <input type="text" placeholder="Anime/Manga Title" name="name" value="" class="textbox" required>
+      <input type="text" placeholder="Anime/Manga Image" name="image" value="" class="textbox" required>
       <p></p>
       <input type="submit" value="Add Anime/Manga" id="add_button">
     </div>
   </form>
+  </div>
+
+  <div id="anime_review" class="hidden">
+    <p>test</p>
   </div>
 </body>
 </html>

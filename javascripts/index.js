@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', ()=>{
-getApiInfo()
 dropDownButton()
+getApiInfo()
 animeAdder()
+mouseover()
 })
 
 const animeUrl = 'http://localhost:3000/anime'
@@ -56,7 +57,7 @@ const renderAllAnime = (titles) => {
 
     const animeComment = document.createElement('h4')
     animeComment.className = 'comment_section'
-    animeComment.innerText = 'Write your experience below!'
+    animeComment.innerText = 'Enter a user name and type your experience below!'
 
     addAnimeForm.append(animeForm, animeComment)
   }
@@ -65,7 +66,7 @@ const renderAllAnime = (titles) => {
 
 const animeAdder = () => {
   const addAnimeInfo = document.querySelector('.add_anime_info')
-  
+
   addAnimeInfo.addEventListener('submit', (e) => {
     e.preventDefault()
     const newAnimeName = e.target.name.value
@@ -86,7 +87,17 @@ const animeAdder = () => {
     .then(resp => resp.json())
     .then(title => renderAllAnime(title))
   })
-  }
+}
+
+const mouseover = () => {
+const addButton = document.querySelector('#add_button')
+const audio = new Audio ('./audiofile/single-ora.mp3')
+  addButton.addEventListener('mouseover', (e) =>{
+    addButton.style.cursor = 'pointer'
+    addButton.value = 'CLICK ME!'
+    audio.play()
+  })
+}
 
 const dropDownButton = () => {
   document.getElementById("myDropdown").classList.toggle("show");

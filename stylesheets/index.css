@@ -61,11 +61,9 @@ h1 {
 
 #anime_info_container {
     padding: 2rem;
-    word-wrap: break-word;
-    margin: auto;
-    width: auto;
-    height: auto;
-    position: absolute; left: 1000px; top: 500px;
+    overflow-wrap: break-word;
+    inline-size: 900px;
+    position: absolute; left: 1000px; top: 300px;
     background: #f1f1f1ad;
     color: #5802f9;
     text-transform: uppercase;
@@ -119,10 +117,20 @@ h1 {
   padding: 1.5rem;
   margin: auto;
   width: auto;
-  position: absolute; right: 500px;
+  position: absolute; right: 300px;
   background: #f1f1f1;
   font-size: 15px;
-  
+}
+
+#anime_review {
+  padding: 1.5rem;
+  margin: auto;
+  width: auto;
+  position: absolute; top:600px; right: 300px;
+  background: #f1f1f1;
+  font-size: 15px;
+  overflow-wrap: break-word;
+  inline-size: 525px;
 }
 
 /* background for project sourced from https://www.inverse.com/entertainment/hunter-x-hunter
