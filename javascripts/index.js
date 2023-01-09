@@ -59,6 +59,14 @@ const renderAllAnime = (titles) => {
     animeComment.className = 'comment_section'
     animeComment.innerText = 'Enter a user name and type your experience below!'
 
+    
+    const watchReadCounter = document.createElement('p')
+    watchReadCounter.innerText = `${titles.anime_name} has been watched ${titles.times_watched} times and read ${titles.times_read} times!`
+
+    const counter = document.querySelector('#counter')
+    
+    counter.append(watchReadCounter)
+
     addAnimeForm.append(animeForm, animeComment)
   }
 
@@ -81,11 +89,12 @@ const animeAdder = () => {
         anime_name: newAnimeName,
         anime_img: newAnimeImage,
         times_watched: 0,
-        times_read: 0, 
+        times_read: 0,
+        comments: ""
       })
     })
     .then(resp => resp.json())
-    .then(title => renderAllAnime(title))
+    .then(title => renderAllAnime(title), alert("Title Added!"))
   })
 }
 
