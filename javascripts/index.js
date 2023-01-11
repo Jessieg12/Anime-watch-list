@@ -3,6 +3,7 @@ dropDownButton()
 getApiInfo()
 animeAdder()
 mouseover()
+// animereviewer()
 })
 
 const animeUrl = 'http://localhost:3000/anime'
@@ -64,10 +65,34 @@ const renderAllAnime = (titles) => {
     watchReadCounter.innerText = `${titles.anime_name} has been watched ${titles.times_watched} times and read ${titles.times_read} times!`
 
     const counter = document.querySelector('#counter')
+    counter.innerHTML=''
     
     counter.append(watchReadCounter)
 
     addAnimeForm.append(animeForm, animeComment)
+
+    
+    const addAnimeReview = document.querySelector('.review')
+    const animeID = `http://localhost:3000/anime/${titles.id}`
+
+    addAnimeReview.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const userName = e.target.fullName.value
+    const animeReview = e.target.comment.value
+    
+  
+    fetch(animeID, {
+      method: "PATCH",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        comments: `Most recent review for ${titles.anime_name}: ${userName} said on... ${animeReview}`
+      })
+    })
+    .then(resp => resp.json())
+    .then(title => renderAllAnime(title), alert("Review Added!"))
+  })
   }
 
 }
@@ -89,14 +114,36 @@ const animeAdder = () => {
         anime_name: newAnimeName,
         anime_img: newAnimeImage,
         times_watched: 0,
-        times_read: 0,
-        comments: ""
+        times_read: 0
       })
     })
     .then(resp => resp.json())
     .then(title => renderAllAnime(title), alert("Title Added!"))
   })
 }
+
+// const animereviewer = () => {
+//   const addAnimeReview = document.querySelector('.review')
+
+//   addAnimeReview.addEventListener('submit', (e) => {
+//     e.preventDefault()
+//     const userName = e.target.fullName.value
+//     const animeReview = e.target.comment.value
+//     // const date = new date(year, month, hours, minutes)
+  
+//     fetch(animeUrl, {
+//       method: "POST",
+//       headers: {
+//         'Content-Type': 'application/json'
+//       },
+//       body: JSON.stringify({
+//         comments: `Review for ${titles.anime_name}: ${userName} said on... ${animeReview}`
+//       })
+//     })
+//     .then(resp => resp.json())
+//     .then(title => renderAllAnime(title), alert("Review Added!"))
+//   })
+// }
 
 const mouseover = () => {
 const addButton = document.querySelector('#add_button')
