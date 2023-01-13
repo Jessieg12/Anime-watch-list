@@ -1,10 +1,5 @@
 document.addEventListener('DOMContentLoaded', ()=>{
-// dropDownButton()
-// getApiInfo()
-// animeAdder()
 mouseover()
-// animereviewer()
-
 
 const animeUrl = 'http://localhost:3000/anime'
 const addAnimeInfo = document.querySelector('.add_anime_info')

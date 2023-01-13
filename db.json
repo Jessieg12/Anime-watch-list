@@ -123,7 +123,8 @@
     {
       "anime_name": "Spy x Family",
       "anime_img": "https://m.media-amazon.com/images/M/MV5BMWM4Njg2MjUtODU3OS00MGNmLWIyNTctZGZkNTdjN2JhNmU2XkEyXkFqcGdeQXVyMTMzNDExODE5._V1_FMjpg_UX1000_.jpg",
-      "times_watched": 0
+      "times_watched": 0,
+      "id": 21
     }
   ]
 }
