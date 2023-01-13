@@ -1,21 +1,25 @@
 document.addEventListener('DOMContentLoaded', ()=>{
-dropDownButton()
-getApiInfo()
-animeAdder()
+// dropDownButton()
+// getApiInfo()
+// animeAdder()
 mouseover()
 // animereviewer()
-})
+
 
 const animeUrl = 'http://localhost:3000/anime'
+const addAnimeInfo = document.querySelector('.add_anime_info')
+const animeSelection = document.getElementById('myDropdown')
+const containerAppear = document.querySelector('#anime_info_container')
+const addImageContainer = document.querySelector('h2')
+const animeComments = document.getElementById('anime_review')
+const addAnimeForm = document.querySelector('h3')
+const counter = document.querySelector('#counter')
 
-const getApiInfo = () => {
   fetch(animeUrl)
   .then(resp => resp.json())
   .then((anime) => anime.forEach(titles => renderAllAnime(titles)))
-}
 
 const renderAllAnime = (titles) => {
-  const animeSelection = document.getElementById('myDropdown')
 
   const animeCard = document.createElement('a')
   animeCard.classList = "anime_names"
@@ -31,10 +35,8 @@ const renderAllAnime = (titles) => {
   })
 
   const addImage = () => {
-    const containerAppear = document.querySelector('#anime_info_container')
     containerAppear.classList.remove('hidden')
 
-    const addImageContainer = document.querySelector('h2')
     addImageContainer.innerHTML= ''
 
     const animeNameCard = document.createElement('p')
@@ -45,21 +47,17 @@ const renderAllAnime = (titles) => {
     animeImageCard.className = 'anime_image'
     animeImageCard.src = titles.anime_img
 
-    const animeComments = document.getElementById('anime_review')
     animeComments.classList.remove('hidden')
-    animeComments.innerText = titles.comments
     
-
     addImageContainer.append(animeNameCard, animeImageCard)
   }
 
   const createAnimeForm = () => {
-    const addAnimeForm = document.querySelector('h3')
     addAnimeForm.innerHTML= ''
 
     const animeForm = document.createElement('div')
     animeForm.className= 'form_container'
-    animeForm.innerText = `Tell me about your experience this time around reading/watching ${titles.anime_name}!`
+    animeForm.innerText = `Tell me about your experience this time around watching ${titles.anime_name}!`
 
     const animeComment = document.createElement('h4')
     animeComment.className = 'comment_section'
@@ -67,50 +65,25 @@ const renderAllAnime = (titles) => {
 
     
     const watchReadCounter = document.createElement('p')
-    watchReadCounter.innerText = `${titles.anime_name} has been watched ${titles.times_watched} times and read ${titles.times_read} times!`
+    watchReadCounter.innerText = `${titles.anime_name} has been watched ${titles.times_watched} times!`
 
-    const counter = document.querySelector('#counter')
+    const watchbtn = document.createElement('button')
+    watchbtn.id = titles.id
+    watchbtn.innerText = 'Add one to times watched'
+
     counter.innerHTML=''
     
-    counter.append(watchReadCounter)
+    counter.append(watchReadCounter, watchbtn)
 
     addAnimeForm.append(animeForm, animeComment)
-
-    
-    const addAnimeReview = document.querySelector('.review')
-    const animeID = `http://localhost:3000/anime/${titles.id}`
-
-    addAnimeReview.addEventListener('submit', (e) => {
-    e.preventDefault()
-    const userName = e.target.user.value
-    const animeReview = e.target.comment.value
-    addImage()
-    addAnimeReview.reset()
-  
-    fetch(animeID, {
-      method: "PATCH",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        comments: `Most recent review for ${titles.anime_name}: ${userName} said on... ${animeReview}`
-      })
-    })
-    .then(resp => resp.json())
-    .then(alert("Review Added!"))
-    })
   }
 }
 
-const animeAdder = () => {
-  const addAnimeInfo = document.querySelector('.add_anime_info')
-
   addAnimeInfo.addEventListener('submit', (e) => {
     e.preventDefault()
+    addAnimeInfo.reset()
     const newAnimeName = e.target.name.value
     const newAnimeImage = e.target.image.value
-  
-    addAnimeInfo.reset()
 
     fetch(animeUrl, {
       method: "POST",
@@ -120,16 +93,85 @@ const animeAdder = () => {
       body: JSON.stringify({
         anime_name: newAnimeName,
         anime_img: newAnimeImage,
-        times_watched: 0,
-        times_read: 0
+        times_watched: 0
       })
     })
     .then(resp => resp.json())
     .then(title => renderAllAnime(title), alert("Title Added!"))
   })
-}
+})
 
-// const animereviewer = () => {
+const mouseover = () => {
+  const addButton = document.querySelector('#add_button')
+  const audio = new Audio ('./audiofile/single-ora.mp3')
+    addButton.addEventListener('mouseover', (e) =>{
+      addButton.style.cursor = 'pointer'
+      addButton.value = 'CLICK ME!'
+      audio.play()
+    })
+  }
+  
+  const dropDownButton = () => {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  this.onclick = function(e) {
+    if (!e.target.matches('.dropbtn')) {
+      const dropdowns = document.getElementsByClassName("dropdown-content");
+      for (i = 0; i < dropdowns.length; i++) {
+        const openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  // const addAnimeReview = document.querySelector('.review')
+  // const animeID = `http://localhost:3000/anime/${titles.id}`
+
+  // addAnimeReview.addEventListener('submit', (e) => {
+  // console.log("what is happening")
+  // e.preventDefault()
+  // const userName = e.target.user.value
+  // const animeReview = e.target.comment.value
+  // addAnimeReview.reset()
+
+  // fetch(animeID, {
+  //   method: "PATCH",
+  //   headers: {
+  //     'Content-Type': 'application/json'
+  //   },
+  //   body: JSON.stringify({
+  //     comments: ``
+  //   })
+  // })
+  // .then(resp => resp.json())
+  // .then(alert("Review Added!"))
+  // })
+
+  // const animereviewer = () => {
 //   const addAnimeReview = document.querySelector('.review')
 
 //   addAnimeReview.addEventListener('submit', (e) => {
@@ -151,29 +193,3 @@ const animeAdder = () => {
 //     .then(title => renderAllAnime(title), alert("Review Added!"))
 //   })
 // }
-
-const mouseover = () => {
-const addButton = document.querySelector('#add_button')
-const audio = new Audio ('./audiofile/single-ora.mp3')
-  addButton.addEventListener('mouseover', (e) =>{
-    addButton.style.cursor = 'pointer'
-    addButton.value = 'CLICK ME!'
-    audio.play()
-  })
-}
-
-const dropDownButton = () => {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-this.onclick = function(e) {
-  if (!e.target.matches('.dropbtn')) {
-    const dropdowns = document.getElementsByClassName("dropdown-content");
-    for (i = 0; i < dropdowns.length; i++) {
-      const openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
