@@ -45,6 +45,11 @@ const renderAllAnime = (titles) => {
     animeImageCard.className = 'anime_image'
     animeImageCard.src = titles.anime_img
 
+    const animeComments = document.getElementById('anime_review')
+    animeComments.classList.remove('hidden')
+    animeComments.innerText = titles.comments
+    
+
     addImageContainer.append(animeNameCard, animeImageCard)
   }
 
@@ -77,9 +82,10 @@ const renderAllAnime = (titles) => {
 
     addAnimeReview.addEventListener('submit', (e) => {
     e.preventDefault()
-    const userName = e.target.fullName.value
+    const userName = e.target.user.value
     const animeReview = e.target.comment.value
-    
+    addImage()
+    addAnimeReview.reset()
   
     fetch(animeID, {
       method: "PATCH",
@@ -91,10 +97,9 @@ const renderAllAnime = (titles) => {
       })
     })
     .then(resp => resp.json())
-    .then(title => renderAllAnime(title), alert("Review Added!"))
-  })
+    .then(alert("Review Added!"))
+    })
   }
-
 }
 
 const animeAdder = () => {
@@ -105,6 +110,8 @@ const animeAdder = () => {
     const newAnimeName = e.target.name.value
     const newAnimeImage = e.target.image.value
   
+    addAnimeInfo.reset()
+
     fetch(animeUrl, {
       method: "POST",
       headers: {
