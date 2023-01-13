@@ -15,7 +15,6 @@ const counter = document.querySelector('#counter')
   .then((anime) => anime.forEach(titles => renderAllAnime(titles)))
 
 const renderAllAnime = (titles) => {
-
   const animeCard = document.createElement('a')
   animeCard.classList = "anime_names"
   animeCard.setAttribute('href', '#')
@@ -29,22 +28,20 @@ const renderAllAnime = (titles) => {
    createAnimeForm()
   })
 
-  const addImage = () => {
-    containerAppear.classList.remove('hidden')
+const addImage = () => {
+  containerAppear.classList.remove('hidden')
 
-    addImageContainer.innerHTML= ''
+  addImageContainer.innerHTML= ''
 
-    const animeNameCard = document.createElement('p')
-    animeNameCard.className = 'anime_NameCard'
-    animeNameCard.innerText = titles.anime_name
+  const animeNameCard = document.createElement('p')
+  animeNameCard.className = 'anime_NameCard'
+  animeNameCard.innerText = titles.anime_name
 
-    const animeImageCard = document.createElement('img')
-    animeImageCard.className = 'anime_image'
-    animeImageCard.src = titles.anime_img
-
-    animeComments.classList.remove('hidden')
+  const animeImageCard = document.createElement('img')
+  animeImageCard.className = 'anime_image'
+  animeImageCard.src = titles.anime_img
     
-    addImageContainer.append(animeNameCard, animeImageCard)
+  addImageContainer.append(animeNameCard, animeImageCard)
   }
 
   const createAnimeForm = () => {
