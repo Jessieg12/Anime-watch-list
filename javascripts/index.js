@@ -55,8 +55,8 @@ const createAnimeForm = () => {
     animeComment.className = 'comment_section'
     animeComment.innerText = 'Enter a user name and type your experience below!'
 
-    const watchReadCounter = document.createElement('p')
-    watchReadCounter.innerHTML = `${titles.anime_name} has been watched ${titles.times_watched} time(s)!`
+    const watchCounter = document.createElement('p')
+    watchCounter.innerHTML = `${titles.anime_name} has been watched ${titles.times_watched} time(s)!`
 
     const watchbtn = document.createElement('button')
     watchbtn.id = titles.id
@@ -74,13 +74,13 @@ const createAnimeForm = () => {
     })
     .then((resp) => resp.json())
     .then(newWatch => {
-      watchReadCounter.innerHTML = `${titles.anime_name} has been watched ${newWatch.times_watched} time(s)!`
+      watchCounter.innerHTML = `${titles.anime_name} has been watched ${newWatch.times_watched} time(s)!`
     })
   })
 
     counter.innerHTML=''
     
-    counter.append(watchReadCounter, watchbtn)
+    counter.append(watchCounter, watchbtn)
 
     addAnimeForm.append(animeForm, animeComment)
   }}
