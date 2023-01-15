@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', ()=>{
-mouseover()
+  mouseover()
 
-const animeUrl = 'http://localhost:3000/anime'
-const addAnimeInfo = document.querySelector('.add_anime_info')
-const animeSelection = document.getElementById('myDropdown')
-const containerAppear = document.querySelector('#anime_info_container')
-const addImageContainer = document.querySelector('h2')
-const animeComments = document.getElementById('anime_review')
-const addAnimeForm = document.querySelector('h3')
-const counter = document.querySelector('#counter')
+  const animeUrl = 'http://localhost:3000/anime'
+  const addAnimeInfo = document.querySelector('.add_anime_info')
+  const animeSelection = document.getElementById('myDropdown')
+  const containerAppear = document.querySelector('#anime_info_container')
+  const addImageContainer = document.querySelector('h2')
+  const animeComments = document.getElementById('anime_review')
+  const addAnimeForm = document.querySelector('h3')
+  const counter = document.querySelector('#counter')
 
   fetch(animeUrl)
   .then(resp => resp.json())
@@ -17,15 +17,15 @@ const counter = document.querySelector('#counter')
 const renderAllAnime = (titles) => {
   const animeCard = document.createElement('a')
   animeCard.classList = "anime_names"
-  animeCard.setAttribute('href', '#')
   animeCard.innerHTML = titles.anime_name
+  animeCard.style.cursor = 'pointer'
   
 
   animeSelection.append(animeCard)
 
   animeCard.addEventListener('click', (e) => {
-   addImage()
-   createAnimeForm()
+   addImage(e)
+   createAnimeForm(e)
   })
 
 const addImage = () => {
@@ -34,7 +34,7 @@ const addImage = () => {
   addImageContainer.innerHTML= ''
 
   const animeNameCard = document.createElement('p')
-  animeNameCard.className = 'anime_NameCard'
+  animeNameCard.className = 'anime_Name_Card'
   animeNameCard.innerText = titles.anime_name
 
   const animeImageCard = document.createElement('img')
@@ -44,7 +44,7 @@ const addImage = () => {
   addImageContainer.append(animeNameCard, animeImageCard)
   }
 
-  const createAnimeForm = () => {
+const createAnimeForm = () => {
     addAnimeForm.innerHTML= ''
 
     const animeForm = document.createElement('div')
@@ -55,27 +55,42 @@ const addImage = () => {
     animeComment.className = 'comment_section'
     animeComment.innerText = 'Enter a user name and type your experience below!'
 
-    
     const watchReadCounter = document.createElement('p')
-    watchReadCounter.innerText = `${titles.anime_name} has been watched ${titles.times_watched} times!`
+    watchReadCounter.innerHTML = `${titles.anime_name} has been watched ${titles.times_watched} time(s)!`
 
     const watchbtn = document.createElement('button')
     watchbtn.id = titles.id
-    watchbtn.innerText = 'Add one to times watched'
+    watchbtn.innerText = '+1 to times watched'
+
+    watchbtn.addEventListener('click', (e)=> {
+    fetch(`http://localhost:3000/anime/${e.target.id}`, {
+      method: "PATCH",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        times_watched: parseInt(`${titles.times_watched}`[0],10)+1
+      })
+    })
+    .then((resp) => resp.json())
+    .then(newWatch => {
+      watchReadCounter.innerHTML = `${titles.anime_name} has been watched ${newWatch.times_watched} time(s)!`
+    })
+  })
 
     counter.innerHTML=''
     
     counter.append(watchReadCounter, watchbtn)
 
     addAnimeForm.append(animeForm, animeComment)
-  }
-}
+  }}
 
   addAnimeInfo.addEventListener('submit', (e) => {
-    e.preventDefault()
-    addAnimeInfo.reset()
     const newAnimeName = e.target.name.value
     const newAnimeImage = e.target.image.value
+    e.preventDefault()
+    addAnimeInfo.reset()
+    
 
     fetch(animeUrl, {
       method: "POST",
