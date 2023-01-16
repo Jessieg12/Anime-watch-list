@@ -23,7 +23,7 @@
   <div id ="anime_info_container" class="hidden">
     <h2></h2>
     <h3></h3>
-    <form class="review">
+    <form class="review_info">
       <div>
       <input type="text" name='user' placeholder="User Name?" required>
       </div>
@@ -31,10 +31,12 @@
       </h5>
       <textarea name="comment" cols="70" rows="30" placeholder="Comment here!" required></textarea>
       <div>
-      <input type="submit" value="Enter Comments" id="add_comment">
+      <input type="submit" value="Enter Comments" class="add_comment">
       </div>
     </form>
-    <div id="counter"></div>
+    <div id="counter">
+      <div id="watched_text"></div>
+    </div>
   </div>
  
 
@@ -57,7 +59,8 @@
   </div>
 
   <div id="anime_review">
-    <h5>Here are the most recent reviews!</h5>
+    <h5>Here is the most recent review!</h5>
+    <div id="reviews"></div>
   </div>
 </body>
 </html>
