@@ -22,34 +22,34 @@ You may say, a tad bit of a flex.
 
 ![alt text](./gifs/animeSelected.gif) 
 
-By adding a review section, it will allow me to see what the story was about and how I felt about it when I finished it. 
+Adding a review section, it will allow me to see what the story was about and how I felt about it when I finished it. 
 
 ![alt text](./gifs/Reviewadded.gif) 
 
-Allowing the app to accept new anime titles is also benificial to keep my current list growing!
+Allowing the app to accept new anime titles and an image is also beneficial to keep my current list growing! The image is more so to jog my memories up and keep it looking attractive.
 
 ![alt text](./gifs/AddAnime.gif)
 
 
 
 ### Installation Instructions
-  * Fork and clone github repo into your enviroment [here](https://github.com/Jessieg12/anime-watch-list).
-  * Install JSON server into your code editor with the following command. 
+* Fork and clone the GitHub repo into your environment [here](https://github.com/Jessieg12/anime-watch-list).
+  * Install the JSON server into your code editor with the following command. 
     ```bash
      npm install -g json
      ```
   * Open the index.html file in your browser.
-  * With Live Server extension installed go ahead and right click the index.html file and select the "Open With Live Server" option to generate the app's webpage.
+  * With the Live Server extension installed go ahead and right-click the index.html file and select the "Open With Live Server" option to generate the app's webpage.
 
 ### Requirements
-  * In order to run our db.json file needed for this app have json-server installed to have access to the needed data.
-  * If/once json-server is installed, you will need to run the json-server command in your terminal to have the db.json file running inside the apps directionary. 
+  * To run our db.json file needed for this app have a JSON server installed to have access to the needed data.
+  * If/once JSON-server is installed, you will need to run the JSON-server command in your terminal to have the db.json file running inside the app's directory. 
     ```bash
     json-server --watch.db.json
     ```
   * Not a requirement but a strong suggestion, VS users should install the Live Server extension for ease of access to the app's webpage.
 
 ### Credits
- * All of the photos used in this application were sourced from IMDB's website for clearity and consis sizes.
- * I owe it all to my best friend, Alyssa who never gave up on me. Julian, my baby boy who always smiles at me when I'm down. Love you both dearly.
+ * All of the photos used in this application were sourced from IMDB's website for clarity and concise sizes.
+ * I owe it all to my best friend, Alyssa who never gave up on me. Julian, my baby boy, always smiles at me when I'm down. Love you both dearly.
  * To all of my friends who attend Anime Central with me every year, thank you guys so much. To all those in the past, thank you as well. Without you all, my passion for anime would not be as strong as it is today.
