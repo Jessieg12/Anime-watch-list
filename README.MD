@@ -34,16 +34,16 @@ Allowing the app to accept new anime titles and an image is also beneficial to k
 
 ### Installation Instructions
 * Fork and clone the GitHub repo into your environment [here](https://github.com/Jessieg12/anime-watch-list).
-  * Install the JSON server into your code editor with the following command. 
+* Install the JSON server into your code editor with the following command. 
     ```bash
      npm install -g json
      ```
-  * Open the index.html file in your browser.
+* Open the index.html file in your browser.
   * With the Live Server extension installed go ahead and right-click the index.html file and select the "Open With Live Server" option to generate the app's webpage.
 
 ### Requirements
-  * To run our db.json file needed for this app have a JSON server installed to have access to the needed data.
-  * If/once JSON-server is installed, you will need to run the JSON-server command in your terminal to have the db.json file running inside the app's directory. 
+* To run our db.json file needed for this app have a JSON server installed to have access to the needed data.
+* If/once JSON-server is installed, you will need to run the JSON-server command in your terminal to have the db.json file running inside the app's directory. 
     ```bash
     json-server --watch.db.json
     ```
