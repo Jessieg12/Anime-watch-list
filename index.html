@@ -21,8 +21,14 @@
   </div>
 
   <div id ="anime_info_container" class="hidden">
-    <h2></h2>
-    <h3></h3>
+    <h2>
+      <p class="anime_name_card"></p>
+      <img class="anime_image">
+    </h2>
+    <h3>
+      <div class="form_container"></div>
+    </h3>
+     <h4 class="comment_section"></h4>
     <form class="review_info">
       <div>
       <input type="text" name='user' placeholder="User Name?" required>
@@ -35,7 +41,10 @@
       </div>
     </form>
     <div id="counter">
-      <div id="watched_text"></div>
+      <p id="anime_title">
+        <p id="watch_counter"></p>
+      </div>
+        <button class="add_one">+1 times watched</button>
     </div>
   </div>
  
@@ -53,7 +62,7 @@
       <input type="text" placeholder="Anime Title" name="name" value="" class="textbox" required>
       <input type="text" placeholder="Anime Image" name="image" value="" class="textbox" required>
       <p></p>
-      <input type="submit" value="Add Anime/Manga" id="add_button">
+      <input type="submit" value="Add Anime" id="add_button">
     </div>
   </form>
   </div>

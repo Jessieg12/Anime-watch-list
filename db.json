@@ -2,23 +2,23 @@
   "anime": [
     {
       "id": 1,
-      "anime_name": "Bleach",
-      "anime_img": "https://m.media-amazon.com/images/M/MV5BZjE0YjVjODQtZGY2NS00MDcyLThhMDAtZGQwMTZiOWNmNjRiXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
-      "times_watched": 3,
-      "comment": "PMonkey left a review for Bleach: So this is the comment that everyone is looking for!"
+      "anime_name": "Hunter x Hunter",
+      "anime_img": "https://m.media-amazon.com/images/M/MV5BNGM0YTk3MWEtN2JlZC00ZmZmLWIwMDktZTMxZGE5Zjc2MGExXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg",
+      "times_watched": 9,
+      "comment": "asdasdas left a review for Hunter x Hunter: asdasdasd"
     },
     {
       "id": 2,
       "anime_name": "Attack on Titan",
       "anime_img": "https://m.media-amazon.com/images/M/MV5BNzc5MTczNDQtNDFjNi00ZDU5LWFkNzItOTE1NzQzMzdhNzMxXkEyXkFqcGdeQXVyNTgyNTA4MjM@._V1_.jpg",
       "times_watched": 1,
-      "comment": "asdasd left a review for Attack on Titan: asdasd"
+      "comment": " left a review for Attack on Titan: "
     },
     {
       "id": 3,
       "anime_name": "Deathnote",
       "anime_img": "https://m.media-amazon.com/images/M/MV5BNjRiNmNjMmMtN2U2Yi00ODgxLTk3OTMtMmI1MTI1NjYyZTEzXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg",
-      "times_watched": 1,
+      "times_watched": 3,
       "comment": "No current review! Sorry!"
     },
     {
@@ -37,10 +37,10 @@
     },
     {
       "id": 6,
-      "anime_name": "Hunter x Hunter",
-      "anime_img": "https://m.media-amazon.com/images/M/MV5BNGM0YTk3MWEtN2JlZC00ZmZmLWIwMDktZTMxZGE5Zjc2MGExXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg",
-      "times_watched": 9,
-      "comment": "Monsstrocity left a review for Hunter x Hunter: This is an anime masterpiece that I have enjoyed 9 times and do not need to be reminded of it."
+      "anime_name": "Bleach",
+      "anime_img": "https://m.media-amazon.com/images/M/MV5BZjE0YjVjODQtZGY2NS00MDcyLThhMDAtZGQwMTZiOWNmNjRiXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
+      "times_watched": 1,
+      "comment": "No current review! Sorry!"
     },
     {
       "id": 7,
@@ -146,6 +146,20 @@
       "times_watched": 1,
       "id": 21,
       "comment": "No current review! Sorry!"
+    },
+    {
+      "anime_name": "The Way of the Househusband",
+      "anime_img": "https://m.media-amazon.com/images/M/MV5BOWZhZTE1NDAtODQ5Yy00NDQ3LWE5ZDctMTZjZmU5OGFiZWYwXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg",
+      "times_watched": 1,
+      "comment": "No review yet! Sorry!",
+      "id": 22
+    },
+    {
+      "anime_name": "The Way of the Househusband",
+      "anime_img": "https://m.media-amazon.com/images/M/MV5BOWZhZTE1NDAtODQ5Yy00NDQ3LWE5ZDctMTZjZmU5OGFiZWYwXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg",
+      "times_watched": 1,
+      "comment": "No review yet! Sorry!",
+      "id": 23
     }
   ]
 }
