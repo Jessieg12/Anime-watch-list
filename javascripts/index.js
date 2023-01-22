@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   const watchCounter = document.getElementById('watch_counter')
   const watchbtn = document.querySelector('.add_one')
   const addComment = document.querySelector('.add_comment')
-  const counter = document.querySelector('#counter')
+  // const counter = document.querySelector('#counter')
 
   fetch(animeUrl)
   .then(resp => resp.json())
@@ -44,70 +44,26 @@ document.addEventListener('DOMContentLoaded', ()=>{
   const addContainer = (anime) => {
     reviews.innerText = `${anime.comment}`
     containerAppear.classList.remove('hidden')
-    // addImageContainer.innerHTML= ''
     animeNameCard.innerHTML = anime.anime_name
     animeImageCard.src = anime.anime_img
-
-    /*
-    */
-
-    /*
-    stop here
-    */
     animeForm.innerHTML = `Tell me about your experience this time around watching ${anime.anime_name}!`
     animeComment.innerHTML = 'Enter a user name and type your experience below!'
-    addComment.id = anime.id
     watchTitle.innerHTML = `${anime.anime_name} has been watched`
     watchCounter.innerHTML = `${anime.times_watched} time(s)!`
     watchbtn.id = anime.id
     reviewSubmit.id = anime.id
-
-    watchbtn.addEventListener('click', (e) => { 
-      increase(e)
-    })
-
-      const increase = (value) => {
-       fetch(`http://localhost:3000/anime/${value.target.id}`, {
-        method: "PATCH",
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          times_watched: parseInt(value.target.parentElement.children[1].textContent.split(' ')[0], 10) +1
-        })
-      })
-      .then((resp) => resp.json())
-      .then(newWatch => {
-        watchCounter.innerHTML = `${newWatch.times_watched} time(s)!`
-      })
-    }
- 
-
-    counter.append(watchCounter, watchbtn)
     addComment.id = anime.id
-
-  reviewSubmit.addEventListener('submit', addReview)
-
-    function addReview(e) {
-    e.preventDefault()
-    const userName = e.target.user.value
-    const animeReview = e.target.comment.value
-    reviewSubmit.reset()
-    fetch(`http://localhost:3000/anime/${e.target.id}`, {
-    method: "PATCH",
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      comment: `${userName} left a review for ${anime.anime_name}: ${animeReview}`
-    })
-    })
-    .then(resp => resp.json())
-    .then(alert("Review Added!"), console.log("what"))
-   }
    }
 
   addAnimeInfo.addEventListener('submit', newAnime)
+  
+  watchbtn.addEventListener('click', (e) => { 
+    increase(e)
+  })
+
+  reviewSubmit.addEventListener('submit', (e) => {
+    addReview(e) 
+  })
 
   function newAnime(e){
     e.preventDefault()
@@ -131,6 +87,41 @@ document.addEventListener('DOMContentLoaded', ()=>{
     setTimeout(() => {
       alert('Thank you for using my app!')}, 1000)
   }
+
+  const increase = (value) => {
+    fetch(`http://localhost:3000/anime/${value.target.id}`, {
+    method: "PATCH",
+    headers: {
+      'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        times_watched: parseInt(value.target.previousElementSibling.children[1].textContent.split(' ')[0], 10) +1
+      })
+    })
+    .then((resp) => resp.json())
+    .then(newWatch => {
+      watchCounter.innerHTML = `${newWatch.times_watched} time(s)!`
+    })
+  }
+
+    function addReview(e) {
+      console.log(e, "event")
+    e.preventDefault()
+    const userName = e.target.user.value
+    const animeReview = e.target.comment.value
+    reviewSubmit.reset()
+    fetch(`http://localhost:3000/anime/${e.target.id}`, {
+    method: "PATCH",
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      comment: `${userName} left a review: ${animeReview}`
+    })
+    })
+    .then(resp => resp.json())
+    .then(alert("Review Added!"))
+   }
 })
 
 
