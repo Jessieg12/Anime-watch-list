@@ -4,3 +4,7 @@
   *Be able to edit the anime at a later date if I have rewatched it
   *In the future make it so I can add a section for my favorite music from the anime with a link to the song or snip
   
+
+
+
+  
