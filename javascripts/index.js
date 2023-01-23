@@ -5,11 +5,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
   const addAnimeInfo = document.querySelector('.add_anime_info')
   const animeSelection = document.getElementById('myDropdown')
   const containerAppear = document.querySelector('#anime_info_container')
-  // const addImageContainer = document.querySelector('h2')
   const animeNameCard = document.querySelector('.anime_name_card')
   const reviewSubmit = document.querySelector('.review_info')
   const animeImageCard = document.querySelector('.anime_image')
-  // const addAnimeForm = document.querySelector('h3')
   const animeForm = document.querySelector('.form_container')
   const animeComment = document.querySelector('.comment_section')
   const reviews = document.getElementById('reviews')
@@ -17,7 +15,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
   const watchCounter = document.getElementById('watch_counter')
   const watchbtn = document.querySelector('.add_one')
   const addComment = document.querySelector('.add_comment')
-  // const counter = document.querySelector('#counter')
 
   fetch(animeUrl)
   .then(resp => resp.json())
@@ -42,11 +39,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
   }
 
   const addContainer = (anime) => {
-    reviews.innerText = `${anime.comment}`
     containerAppear.classList.remove('hidden')
+    reviews.innerText = `${anime.comment}`
     animeNameCard.innerHTML = anime.anime_name
     animeImageCard.src = anime.anime_img
-    animeForm.innerHTML = `Tell me about your experience this time around watching ${anime.anime_name}!`
+    animeForm.innerHTML = `Tell us about your experience this time around watching ${anime.anime_name}!`
     animeComment.innerHTML = 'Enter a user name and type your experience below!'
     watchTitle.innerHTML = `${anime.anime_name} has been watched`
     watchCounter.innerHTML = `${anime.times_watched} time(s)!`
@@ -65,7 +62,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     addReview(e) 
   })
 
-  function newAnime(e){
+   function newAnime(e){
     e.preventDefault()
     const newAnimeName = e.target.name.value
     const newAnimeImage = e.target.image.value
@@ -104,8 +101,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     })
   }
 
-    function addReview(e) {
-      console.log(e, "event")
+  function addReview(e) {
     e.preventDefault()
     const userName = e.target.user.value
     const animeReview = e.target.comment.value
@@ -170,8 +166,7 @@ const mouseover = () => {
 
 
 
-
-
+// Might recycle this code for later use
 
 
   
