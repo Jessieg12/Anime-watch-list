@@ -18,8 +18,8 @@
       "id": 3,
       "anime_name": "Deathnote",
       "anime_img": "https://m.media-amazon.com/images/M/MV5BNjRiNmNjMmMtN2U2Yi00ODgxLTk3OTMtMmI1MTI1NjYyZTEzXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg",
-      "times_watched": 3,
-      "comment": "No current review! Sorry!"
+      "times_watched": 14,
+      "comment": "asdkasdlkasjdjk left a review: a;ksdjas;dj;las"
     },
     {
       "id": 4,
@@ -146,6 +146,13 @@
       "times_watched": 1,
       "id": 21,
       "comment": "No current review! Sorry!"
+    },
+    {
+      "anime_name": "The Way of the Househusband",
+      "anime_img": "https://m.media-amazon.com/images/M/MV5BOWZhZTE1NDAtODQ5Yy00NDQ3LWE5ZDctMTZjZmU5OGFiZWYwXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg",
+      "times_watched": 5,
+      "comment": "No review yet! Sorry!",
+      "id": 22
     }
   ]
 }
