@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', ()=>{
   mouseover()
 
+  //Element selectors
+  
   const animeUrl = 'http://localhost:3000/anime'
   const addAnimeInfo = document.querySelector('.add_anime_info')
   const animeSelection = document.getElementById('myDropdown')
@@ -52,7 +54,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
     addComment.id = anime.id
    }
 
-  addAnimeInfo.addEventListener('submit', newAnime)
+
+   //AddeventListener section
+
+  addAnimeInfo.addEventListener('submit', (e) =>{
+    newAnime(e)
+  })
   
   watchbtn.addEventListener('click', (e) => { 
     increase(e)
@@ -61,6 +68,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
   reviewSubmit.addEventListener('submit', (e) => {
     addReview(e) 
   })
+
+  //callbacks
 
    function newAnime(e){
     e.preventDefault()
@@ -116,7 +125,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     })
     })
     .then(resp => resp.json())
-    .then(alert("Review Added!"))
+    .then(reviews.innerText = `${userName} left a review: ${animeReview}`, alert("Review Added!"))
    }
 })
 
