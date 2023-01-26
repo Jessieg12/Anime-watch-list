@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', ()=>{
   mouseover()
 
-  //Element selectors
+  //element selectors
   
   const animeUrl = 'http://localhost:3000/anime'
   const addAnimeInfo = document.querySelector('.add_anime_info')
@@ -37,12 +37,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
   const fetchTargetAnime = (e) => {
   fetch(`http://localhost:3000/anime/${e.target.id}`)
   .then(resp => resp.json())
-  .then(anime => addContainer(anime))
+  .then(anime => renderContainer(anime))
   }
 
-  const addContainer = (anime) => {
+  const renderContainer = (anime) => {
     containerAppear.classList.remove('hidden')
-    reviews.innerText = `${anime.comment}`
+    reviews.innerText = anime.comment
     animeNameCard.innerHTML = anime.anime_name
     animeImageCard.src = anime.anime_img
     animeForm.innerHTML = `Tell us about your experience this time around watching ${anime.anime_name}!`
@@ -55,21 +55,56 @@ document.addEventListener('DOMContentLoaded', ()=>{
    }
 
 
-   //AddeventListener section
+   //addeventListener section
+  
+   reviewSubmit.addEventListener('submit', (e) => {
+    addReview(e) 
+  })
+
+  watchbtn.addEventListener('click', (e) => { 
+    increaseWatch(e)
+  })
+
 
   addAnimeInfo.addEventListener('submit', (e) =>{
     newAnime(e)
   })
-  
-  watchbtn.addEventListener('click', (e) => { 
-    increase(e)
-  })
-
-  reviewSubmit.addEventListener('submit', (e) => {
-    addReview(e) 
-  })
 
   //callbacks
+
+  function addReview(e) {
+    e.preventDefault()
+    const userName = e.target.user.value
+    const animeReview = e.target.comment.value
+    reviewSubmit.reset()
+    fetch(`http://localhost:3000/anime/${e.target.id}`, {
+    method: "PATCH",
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      comment: `${userName} left a review: ${animeReview}`
+    })
+    })
+    .then(resp => resp.json())
+    .then(reviews.innerText = `${userName} left a review: ${animeReview}`, alert("Review Added!"))
+   }
+
+  const increaseWatch = (value) => {
+    fetch(`http://localhost:3000/anime/${value.target.id}`, {
+    method: "PATCH",
+    headers: {
+      'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        times_watched: parseInt(value.target.previousElementSibling.children[1].textContent.split(' ')[0], 10) +1
+      })
+    })
+    .then(resp => resp.json())
+    .then(newWatch => {
+      watchCounter.innerHTML = `${newWatch.times_watched} time(s)!`
+    })
+  }
 
    function newAnime(e){
     e.preventDefault()
@@ -93,40 +128,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
     setTimeout(() => {
       alert('Thank you for using my app!')}, 1000)
   }
-
-  const increase = (value) => {
-    fetch(`http://localhost:3000/anime/${value.target.id}`, {
-    method: "PATCH",
-    headers: {
-      'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        times_watched: parseInt(value.target.previousElementSibling.children[1].textContent.split(' ')[0], 10) +1
-      })
-    })
-    .then((resp) => resp.json())
-    .then(newWatch => {
-      watchCounter.innerHTML = `${newWatch.times_watched} time(s)!`
-    })
-  }
-
-  function addReview(e) {
-    e.preventDefault()
-    const userName = e.target.user.value
-    const animeReview = e.target.comment.value
-    reviewSubmit.reset()
-    fetch(`http://localhost:3000/anime/${e.target.id}`, {
-    method: "PATCH",
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      comment: `${userName} left a review: ${animeReview}`
-    })
-    })
-    .then(resp => resp.json())
-    .then(reviews.innerText = `${userName} left a review: ${animeReview}`, alert("Review Added!"))
-   }
 })
 
 
@@ -164,10 +165,13 @@ const mouseover = () => {
 
 
 
+/*
+Adding anime example
 
+The Way of The Househusband
+https://m.media-amazon.com/images/M/MV5BOWZhZTE1NDAtODQ5Yy00NDQ3LWE5ZDctMTZjZmU5OGFiZWYwXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg
 
-
-
+*/
 
 
 
